@@ -8,7 +8,7 @@ command:
         type: string
         default: "Test failed"
     steps:
-      - run: echo $CIRCLE_WORKFLOW_ID
+      - run: echo $MY_ENV_VAR
 
 jobs:
   save_hello_world_output:
@@ -21,7 +21,7 @@ jobs:
           paths:
             - output.txt
       - print_pipeline_id:
-          to: "$CIRCLE_WORKFLOW_ID"
+          to: "$MY_ENV_VAR"
 
   print_output_file:
     docker:
